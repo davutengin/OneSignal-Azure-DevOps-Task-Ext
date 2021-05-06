@@ -1,0 +1,55 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "00dd923e-363c-476d-bb16-e2ba2b3cbb61",
+    "name": "oneSignalAzureDevOpsTaskExt",
+    "friendlyName": "OneSignal Create Push Notification",
+    "description": "Creates push notification for all subscribers with title and content message.",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Davut Engin",
+    "version": {
+        "Major": 0,
+        "Minor": 12,
+        "Patch": 0
+    },
+    "instanceNameFormat": "OneSignal - Create Push Notification",
+    "inputs": [
+        {
+            "name": "appId",
+            "type": "string",
+            "label": "APP ID",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "ONESIGNAL APP ID"
+          },
+          {
+            "name": "restApiKey",
+            "type": "string",
+            "label": "REST API KEY",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "OneSignal REST API KEY"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "label": "Title",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Your message's title"
+          },
+          {
+            "name": "message",
+            "type": "multiLine",
+            "label": "Message",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Your message content"
+          }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}
